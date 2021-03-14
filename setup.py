@@ -12,7 +12,7 @@ with open(os.path.join(here, "requirements.txt"), encoding="utf-8") as fid:
 
 setuptools.setup(
     name="thonny-icontract-hypothesis",
-    version="1.0.0a1",
+    version="1.0.0a2",
     author="Marko Ristin",
     author_email="marko@ristin.ch",
     description="Automatically test Python code using icontract-hypothesis in Thonny.",
