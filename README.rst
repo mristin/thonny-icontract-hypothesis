@@ -39,10 +39,15 @@ Go to ``Tools`` menu and select ``Manage plug-ins...``:
 
 .. image:: https://raw.githubusercontent.com/mristin/thonny-icontract-hypothesis/main/readme/manage_plugins.png
     :alt: Tools -> Manage plug-ins...
+    :width: 916
+    :height: 472
 
-Search for ``thonny-icontract-hypothesis``:
+Search for ``thonny-icontract-hypothesis`` on PyPI and click on the link to install it:
 
-TODO add screenshots once published
+.. image:: https://raw.githubusercontent.com/mristin/thonny-icontract-hypothesis/main/readme/search_on_pypi.png
+    :alt: Search on PyPI
+    :width: 1251
+    :height: 984
 
 With pip
 --------
@@ -59,6 +64,8 @@ menu and select ``Test the current file with icontract-hypothesis``:
 
 .. image:: https://raw.githubusercontent.com/mristin/thonny-icontract-hypothesis/main/readme/tools_test.png
     :alt: Tools->Test
+    :width: 909
+    :height: 475
 
 All changes to the file will be saved prior to executing the tests.
 If you prefer, you can undo them.
@@ -67,11 +74,15 @@ The tests will be executed in the Thonny shell:
 
 .. image:: https://raw.githubusercontent.com/mristin/thonny-icontract-hypothesis/main/readme/shell.png
     :alt: Shell running the tests
+    :width: 1317
+    :height: 1045
 
 You can stop the tests with the "Stop" sign:
 
 .. image:: https://raw.githubusercontent.com/mristin/thonny-icontract-hypothesis/main/readme/stop.png
     :alt: Stop the tests
+    :width: 741
+    :height: 378
 
 Sometimes it is practical to test only a single function (*e.g.*, if it takes too long
 to test the whole file).
@@ -81,6 +92,8 @@ icontract-hypothesis``:
 
 .. image:: https://raw.githubusercontent.com/mristin/thonny-icontract-hypothesis/main/readme/tools_test_at.png
     :alt: Tools->Test at
+    :width: 917
+    :height: 471
 
 Contributing
 ============
