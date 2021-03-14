@@ -1,0 +1,2 @@
+thonny>=3,<4
+icontract-hypothesis>=1,<2
