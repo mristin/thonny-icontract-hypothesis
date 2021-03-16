@@ -1,5 +1,6 @@
 """Automatically test Python code using icontract-hypothesis in Thonny."""
 import subprocess
+import sys
 import tkinter.messagebox
 
 import thonny
@@ -56,7 +57,7 @@ def _test(workbench: thonny.workbench.Workbench, only_at: bool) -> None:
 
     editor.save_file()
 
-    cmd = ["!", "python", "-m", "icontract_hypothesis", "test", "-p", filename]
+    cmd = ["!", sys.executable, "-m", "icontract_hypothesis", "test", "-p", filename]
     if only_at:
         selection = editor.get_code_view().get_selected_range()
         cmd.extend(["--include", str(selection.lineno)])
