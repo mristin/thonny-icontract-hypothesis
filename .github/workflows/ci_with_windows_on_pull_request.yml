@@ -1,0 +1,22 @@
+name: Continuous Integration on Pull Request - Windows
+
+on: [pull_request]
+
+jobs:
+  tests:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.x
+
+    - name: Install Dependencies
+      run: |
+        pip3 install .[dev]
+
+    - name: Check
+      run: |
+        python precommit.py

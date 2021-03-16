@@ -1,6 +1,6 @@
-name: Continuous Integration - OSX
+name: Continuous Integration on Pull Request - OSX
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   tests:
