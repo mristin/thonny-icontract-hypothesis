@@ -1,6 +1,10 @@
 name: Continuous Integration - Ubuntu
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+      - main
 
 jobs:
   Execute:

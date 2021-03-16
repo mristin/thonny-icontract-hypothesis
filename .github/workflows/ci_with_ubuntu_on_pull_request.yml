@@ -1,0 +1,47 @@
+name: Continuous Integration on Pull Request - Ubuntu
+
+on: [pull_request]
+
+jobs:
+  Execute:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.x
+
+    - name: Install Dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip3 install --upgrade coveralls
+        pip3 install .[dev]
+
+    - name: Check
+      run: |
+        python precommit.py
+
+    - name: Upload Coverage
+      run: coveralls --service=github
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        COVERALLS_FLAG_NAME: ${{ matrix.python-version }}
+        COVERALLS_PARALLEL: true
+
+  Finish-Coveralls:
+    name: Finish Coveralls
+    needs: Execute
+    runs-on: ubuntu-latest
+    container: python:3-slim
+    steps:
+      - name: Finish Coveralls
+        run: |
+          pip3 install --upgrade coveralls
+          coveralls --finish --service=github
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
