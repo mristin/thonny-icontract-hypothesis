@@ -1,5 +1,6 @@
 """Test the plugin functions both public and private."""
 import os
+import sys
 import unittest
 import unittest.mock
 
@@ -82,7 +83,7 @@ class TestTest(unittest.TestCase):
             editor.save_file.assert_called_once()
 
             shell.text.submit_command.assert_called_with(
-                cmd_line='! python -m icontract_hypothesis test '
+                cmd_line=f'! {sys.executable} -m icontract_hypothesis test '
                          '-p "some file.py"\n',
                 tags=unittest.mock.ANY
             )
@@ -108,7 +109,7 @@ class TestTest(unittest.TestCase):
             editor.save_file.assert_called_once()
 
             shell.text.submit_command.assert_called_with(
-                cmd_line='! python -m icontract_hypothesis test '
+                cmd_line=f'! {sys.executable} -m icontract_hypothesis test '
                          '-p "some file.py" --include 1984\n',
                 tags=unittest.mock.ANY
             )
