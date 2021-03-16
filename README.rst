@@ -49,6 +49,14 @@ Search for ``thonny-icontract-hypothesis`` on PyPI and click on the link to inst
     :width: 1251
     :height: 984
 
+Click on the ``Install`` button:
+
+.. image:: https://raw.githubusercontent.com/mristin/thonny-icontract-hypothesis/main/readme/install.png
+    :alt: Install
+    :width: 1639
+    :height: 1297
+
+
 With pip
 --------
 In your virtual environment, invoke:
